@@ -1,0 +1,36 @@
+name: EasyGrant
+main: com.manul.easygrant.EasyGrant
+version: 1.0
+api-version: 1.21
+commands:
+  easygrant:
+    description: Main command for EasyGrant plugin
+    aliases: [eg, grant]
+    usage: /<command> <help|give|info|import>
+    permission: easygrant.commands.use
+  sendgrant:
+    description: Grant group to player if you have easygrant.grant.{group} permission
+    usage: /<command> <player>
+    permission: easygrant.commands.use
+permissions:
+  easygrant.commands.use:
+    description: Allows usage of /easygrant command
+    default: op
+  easygrant.command.help:
+    description: Allows usage of /easygrant help
+    default: op
+  easygrant.command.give:
+    description: Allows usage of /easygrant give
+    default: op
+  easygrant.command.info:
+    description: Allows usage of /easygrant info
+    default: op
+  easygrant.command.import:
+    description: Allows usage of /easygrant import
+    default: op
+  easygrant.grant.*:
+    description: Allows granting any group
+    default: false
+  easygrant.cooldown.bypass:
+    description: bypass cooldown
+    default: op

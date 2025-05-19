@@ -1,0 +1,151 @@
+//package com.manul.easygrant;
+
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.List;
+//import java.util.Map;
+
+//import org.bukkit.Bukkit;
+//import org.bukkit.ChatColor;
+//import org.bukkit.configuration.file.FileConfiguration;
+//import org.bukkit.entity.Player;
+//import org.bukkit.event.EventHandler;
+//import org.bukkit.event.Listener;
+//import org.bukkit.event.inventory.InventoryClickEvent;
+//import org.bukkit.inventory.Inventory;
+//import org.bukkit.inventory.ItemStack;
+
+//public class GrantGUI implements Listener {
+
+  //  private final EasyGrant plugin;
+    //private final Map<Player, String[]> targetPlayers = new HashMap<>();
+    //private Inventory gui;
+
+    //public GrantGUI(EasyGrant plugin) {
+      //  this.plugin = plugin;
+       // Bukkit.getPluginManager().registerEvents(this, plugin);
+    //}
+
+    //public void openGUI(Player sender, String targetName, String grantGroup) {
+      //  FileConfiguration guiConfig = plugin.getGuiConfig();
+        //int size = guiConfig.getInt("inventory_size", 54);
+        //String title = color(guiConfig.getString("inventory_name", "Confirm"));
+
+        //gui = Bukkit.createInventory(null, size, title);
+
+        //if (!guiConfig.isConfigurationSection("items")) {
+          //  sender.sendMessage("§cОшибка: секция items не найдена в gui.yml");
+            //return;
+        //}
+        //var itemsSection = guiConfig.getConfigurationSection("items");
+
+        //for (String key : itemsSection.getKeys(false)) {
+          //  String posString = itemsSection.getString(key + ".position");
+            //if (posString == null) continue;
+
+   //         List<Integer> positions = parsePositions(posString);
+     //       if (positions.isEmpty()) continue;
+
+       //     String itemId = itemsSection.getString(key + ".item_id", "STONE");
+         //   String itemName = color(itemsSection.getString(key + ".item_name", "Item"));
+           // List<String> lore = color(itemsSection.getStringList(key + ".item_lore"));
+
+//            ItemStack item = ItemBuilder.create(itemId, itemName, lore);
+
+  //          for (int pos : positions) {
+    //            if (pos >= 0 && pos < gui.getSize()) {
+      //              gui.setItem(pos, item);
+        //        }
+          //  }
+       // }
+
+//        targetPlayers.put(sender, new String[]{targetName, grantGroup});
+  //      sender.openInventory(gui);
+    //}
+
+    //private List<Integer> parsePositions(String posString) {
+      //  List<Integer> positions = new ArrayList<>();
+        //if (posString == null || posString.isEmpty()) return positions;
+
+//        String[] parts = posString.split(",");
+  //      for (String part : parts) {
+    //        part = part.trim();
+      //      if (part.contains("-")) {
+        //        String[] range = part.split("-");
+          //      if (range.length == 2) {
+            //        try {
+              //          int start = Integer.parseInt(range[0]);
+                //        int end = Integer.parseInt(range[1]);
+                  //      for (int i = start; i <= end; i++) {
+                    //        positions.add(i);
+                      //  }
+                    //} catch (NumberFormatException ignored) {}
+                //}
+            //} else {
+              //  try {
+                //    positions.add(Integer.parseInt(part));
+                //} catch (NumberFormatException ignored) {}
+            //}
+        //}
+        //return positions;
+    //}
+
+//    private List<String> color(List<String> input) {
+  //      List<String> out = new ArrayList<>();
+    //    for (String s : input) out.add(color(s));
+      //  return out;
+    //}
+
+    //private String color(String s) {
+      //  return s == null ? "" : ChatColor.translateAlternateColorCodes('&', s);
+    //}
+
+    //@EventHandler
+    //public void onInventoryClick(InventoryClickEvent e) {
+      //  if (e.getInventory() == null) return;
+        //String invTitle = color(plugin.getGuiConfig().getString("inventory_name"));
+        //if (!color(e.getView().getTitle()).equals(invTitle)) return;
+        //e.setCancelled(true);
+
+        //Player player = (Player) e.getWhoClicked();
+        //if (!targetPlayers.containsKey(player)) return;
+
+//        int slot = e.getSlot();
+  //      FileConfiguration guiConfig = plugin.getGuiConfig();
+    //    var itemsSection = guiConfig.getConfigurationSection("items");
+
+      //  for (String key : itemsSection.getKeys(false)) {
+        //    String posString = itemsSection.getString(key + ".position");
+          //  List<Integer> positions = parsePositions(posString);
+            //if (!positions.contains(slot)) continue;
+
+  //          boolean closeInv = itemsSection.getBoolean(key + ".close_inventory", true);
+    //        boolean sendCommand = itemsSection.getBoolean(key + ".send_command", false);
+      //      List<String> commands = itemsSection.getStringList(key + ".commands");
+        //    boolean asPlayer = itemsSection.getBoolean(key + ".as_player", false);
+
+          //  if (sendCommand) {
+            //    String[] parts = targetPlayers.get(player);
+              //  String targetName = parts[0];
+                //String grantGroup = parts[1];
+
+    //            for (String cmd : commands) {
+      //              cmd = cmd.replace("%target%", targetName).replace("%group%", grantGroup);
+        //            if (asPlayer) {
+          //              player.performCommand(cmd);
+            //        } else {
+              //          Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd);
+                //    }
+                //}
+            //}
+
+            //if (closeInv) {
+              //  player.closeInventory();
+            //}
+
+            //targetPlayers.remove(player);
+            //break;
+        //}
+    //}
+//}
+

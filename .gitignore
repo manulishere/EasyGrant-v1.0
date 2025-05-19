@@ -1,0 +1,39 @@
+# Сборочная папка Maven
+/target/
+
+# Скомпилированные JAR файлы
+*.jar
+
+# Конфиги IDE
+.idea/
+*.iml
+
+# Файлы OS
+.DS_Store
+Thumbs.db
+
+# Логи и временные файлы
+*.log
+*.tmp
+
+# Maven wrapper файлы (если не используешь)
+.mvn/
+mvnw
+mvnw.cmd
+
+# Папка out (если создаётся в IDE)
+/out/
+
+# Папки test output
+/test-output/
+
+# IntelliJ-specific
+*.iws
+
+# VSCode-specific
+.vscode/
+
+# Eclipse-specific
+.project
+.classpath
+.settings/

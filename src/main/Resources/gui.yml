@@ -1,0 +1,36 @@
+inventory_size: 54
+inventory_name: "&6Подтверждение выдачи группы"
+
+items:
+  confirm:
+    position: 20
+    item_id: "LIME_STAINED_GLASS_PANE"
+    item_name: "&aПодтвердить"
+    item_lore:
+      - "&7Нажмите, чтобы подтвердить"
+    close_inventory: true
+    send_command: true
+    as_player: false
+    commands:
+      - "easygrant give %target% %group%"
+
+  cancel:
+    position: 24
+    item_id: "RED_STAINED_GLASS_PANE"
+    item_name: "&cОтмена"
+    item_lore:
+      - "&7Нажмите, чтобы отменить"
+    close_inventory: true
+    send_command: false
+    as_player: false
+    commands: []
+
+  filler:
+    position: 0-8,9,17,18,26,27-35,36-44,45-53
+    item_id: "BLACK_STAINED_GLASS_PANE"
+    item_name: " "
+    item_lore: []
+    close_inventory: false
+    send_command: false
+    as_player: false
+    commands: []

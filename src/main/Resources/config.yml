@@ -1,0 +1,21 @@
+# Install language translations
+language: en_US
+# For a list of your groups that players can issue, read the documentation: https://manulishere.gitbook.io/easygrant
+grant_groups:
+ - 'example1'
+ - 'example2'
+ - 'example3'
+ - 'example4'
+ - 'example5'
+# Set whether the title will be shown to the player who received the group?
+# Read the documentation: https://manulishere.gitbook.io/easygrant
+title: true
+title_start: 100
+title_duration: 100
+title_end: 100
+# If you specify true, then you need to specify the time in seconds in the cooldown line (Time will be automatically converted to days and hours if necessary).
+# If you specify false, the cooldown will be INFINITE 
+# (This means that the command will be used by the player only once, after which he will never be able to use the command again until you clear the player data in the EasyGrant/Data/data.yml file)
+grant_give_cooldown: false
+# If cooldown: true, then specify the time in seconds
+cooldown: 10
